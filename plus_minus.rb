@@ -1,9 +1,9 @@
 require 'byebug'
-def plusMinus(arr, positives = [], negatives = [], zeros = 0)
+def plusMinus(arr, positives = [], negatives = [], zeros = [])
   arr.each do |item|
     positives << item if item.positive?
     negatives << item if item.negative?
-    zeros if item == 0
+    zeros << item if item == 0
   end
   # byebug
   p (positives.size.to_f / arr.size.to_f).round(6)

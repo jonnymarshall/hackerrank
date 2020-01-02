@@ -1,19 +1,33 @@
 require 'byebug'
 
-def staircase(n, staircase = "", count = 0)
-  until n == count
-    staircase << "#"
+def staircase(n, staircase = "", count = 1)
+  until n < count
+    (n - count).times do
+      staircase << " "
+    end
+
+    count.times do
+      staircase << "#"
+    end
+    staircase << "\n"
     count += 1
   end
   staircase
 end
 
 
-# p "    #
-#       ##
-#      ###
-#     ####
-#    #####
-#   ######" == staircase(6)
+puts "     #
+    ##
+   ###
+  ####
+ #####
+######"
 
 puts staircase(6)
+
+p "     #
+    ##
+   ###
+  ####
+ #####
+######" == staircase(6)

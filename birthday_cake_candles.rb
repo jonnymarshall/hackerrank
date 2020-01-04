@@ -3,7 +3,8 @@
 
 def birthdayCakeCandles(ar)
 # must return an integer representing the number of candles she can blow out.
-  ar.sort.count(ar.last)
+  ar_sorted = ar.sort
+  ar.count(ar_sorted.last)
 end
 
 
